@@ -1,4 +1,5 @@
 import React from 'react';
+import "./post-list-item.css";
 
 const PostListItem = () => {
     return (
@@ -15,7 +16,7 @@ const PostListItem = () => {
                 <button 
                 type="button" 
                 className="btn-trach btn-sm">
-                    <i className="fa fa-trach-o"></i>
+                    <i className="fa fa-trash-o"></i>
                 </button>
                 <i className="fa fa-heart"></i>
             </div>
