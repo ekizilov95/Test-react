@@ -3,7 +3,7 @@ import PostListItem from '../post-list-item';
 import "./post-list.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const PostList = ({posts}) => {
+const PostList = ({posts, onDelete}) => {
     
     const elements = posts.map(item => {
         if(typeof item === 'object'&& item.label != false) {
@@ -11,7 +11,11 @@ const PostList = ({posts}) => {
             const {id} = item;
             return (
                 <li key={id} className="list-group-item">
-                    <PostListItem label={item.label} important={item.important} /> 
+                    <PostListItem 
+                    label={item.label} 
+                    important={item.important} 
+                    onDelete={() => onDelete(id)}
+                    /> 
                     {/* <PostListItem {...item} /> сокращенный синтаксис */}
                 </li>
             )
