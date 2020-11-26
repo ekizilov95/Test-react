@@ -5,18 +5,31 @@ import PostStatusFilter from '../post-status-filter';
 import PostList from '../post-list';
 import PostAddForm from '../post-add-form';
 import './app.css';
+import styled from 'styled-components';
+
+const AppBlock = styled.div`
+    margin: 0 auto;
+    max-width: 800px;
+`
 
 const App = () => {
+
+    const data = [
+        {label:"Going to learn React", important: true, id:'qwdf2'},
+        {label:"Thanks is so good", important: false, id:'wd31d'},
+        {label:"I need a break...", important: false, id:'12d42s'},
+    ];
+
     return (
-       <div className="app">
+       <AppBlock>
             <AppHeader/>
             <div className="search-panel d-flex">
                 <SearchPanel/>
                 <PostStatusFilter/>
             </div>
-            <PostList/>
+            <PostList posts={data}/>
             <PostAddForm/>
-       </div>
+       </AppBlock>
     )
 }
 
